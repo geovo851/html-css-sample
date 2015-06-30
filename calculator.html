@@ -82,8 +82,8 @@
          <td><input id="btnColor" name="btnPercent" type="Button"
             value="%" onclick="Percent()" /></td>
         
-         <td><input id="btnColor" name="btnPercentr" type="Button"
-            value= "&radic;" onclick="Percentr()" /></td>
+         <td><input id="btnColor" name="btnSqrt" type="Button"
+            value= "&radic;" onclick="Sqrt()" /></td>
 
          <!-- <td align=middle>&nbsp;</td> -->
      </tr>
@@ -203,7 +203,7 @@ function Percent ()
 }
 
 // вычисляем значение корня
-function Percentr () 
+function Sqrt () 
 {
     Fcalc.ReadOut.value = parseFloat(Math.sqrt(Fcalc.ReadOut.value)) 
     FlagNewNum = true;
