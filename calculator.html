@@ -5,27 +5,31 @@
   <title>Калькулятор</title>
   <style type="text/css">
     .tblCalc{
-    border:1px solid gray;
+    border:1px solid green;
     margin:0;
     padding:0;
     width:250px;
     text-align:center;
   }
   .tblCalc input{
-    border:1px solid gray;
+    border:1px solid green;
     width:30px;
     margin:4px;
   }
     #btnWide{
+    background-color:#00ccff;
     width:80px;
   }
   #editWide{
     width:250px;
   }
+   #btnColor{
+    background-color:#00ccff;
+  }
   td {
-  background-color:#999;
+  background-color:green;
   }
-  }
+  
 </style>
 </head>
 <body>
@@ -39,9 +43,9 @@
      </tr>
      <tr>
          <td colspan="3"></td>
-         <td><input name="btnClear" type="Button"
+         <td><input id="btnColor" name="btnClear" type="Button"
             value="C" onclick="Clear()" /></td>
-         <td><input name="btnClearEntry" type="Button"
+         <td><input id="btnColor" name="btnClearEntry" type="Button"
             value="CE" onclick="ClearEntry()" /></td>
      </tr>
      <tr>
@@ -51,9 +55,9 @@
             value="8" onclick="NumPressed(8)"></td>
          <td><input name="btnNine" type="Button"
             value="9" onclick="NumPressed(9)"></td>
-         <td><input name="btnPlus" type="Button"
+         <td><input id="btnColor" name="btnPlus" type="Button"
             value="+" onclick="Operation('+')" /></td>
-         <td><input name="btnMultiply" type="Button"
+         <td><input id="btnColor" name="btnMultiply" type="Button"
             value="*" onclick="Operation('*')" /></td>
        </tr>
      <tr>
@@ -63,9 +67,9 @@
             value="5" onclick="NumPressed(5)"></td>
          <td><input name="btnSix" type="Button"
             value="6" onclick="NumPressed(6)"></td>
-         <td><input name="btnMinus" type="Button"
+         <td><input id="btnColor" name="btnMinus" type="Button"
             value="-" onclick="Operation('-')" /></td>
-         <td align=middle><input name="btnDivide" type="Button"
+         <td align=middle><input id="btnColor" name="btnDivide" type="Button"
             value=" / " onclick="Operation('/')" /></td>
      </tr>
      <tr>
@@ -75,9 +79,13 @@
             value="2" onclick="NumPressed(2)"></td>
          <td><input name="btnThree" type="Button"
             value="3" onclick="NumPressed(3)"></td>
-         <td><input name="btnPercent" type="Button"
+         <td><input id="btnColor" name="btnPercent" type="Button"
             value="%" onclick="Percent()" /></td>
-         <td align=middle>&nbsp;</td>
+        
+         <td><input id="btnColor" name="btnPercentr" type="Button"
+            value= "&radic;" onclick="Percentr()" /></td>
+
+         <!-- <td align=middle>&nbsp;</td> -->
      </tr>
      <tr>
          <td><input name="btnZero" type="Button"
@@ -179,9 +187,8 @@ function Clear ()
 }
 
 
-
 // меняем знак текущего результата
-function Neg () 
+function Neg ()
 {
     Fcalc.ReadOut.value = 
     parseFloat(Fcalc.ReadOut.value) * -1;
@@ -194,5 +201,13 @@ function Percent ()
       (parseFloat(Fcalc.ReadOut.value) / 100) * 
       parseFloat(Currents);
 }
+
+// вычисляем значение корня
+function Percentr () 
+{
+    Fcalc.ReadOut.value = parseFloat(Math.sqrt(Fcalc.ReadOut.value)) 
+    FlagNewNum = true;
+}
+
 </script>
 </body>
